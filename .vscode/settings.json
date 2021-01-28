@@ -1,0 +1,5 @@
+{
+    "python.linting.flake8Enabled": true,
+    "python.linting.enabled": true,
+    "python.pythonPath": "/home/santhosh/anaconda3/envs/flask_env/bin/python"
+}
