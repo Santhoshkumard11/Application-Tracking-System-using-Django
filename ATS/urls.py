@@ -15,9 +15,15 @@ Including another URLconf
 """
 from django.conf.urls import include
 from django.contrib import admin
+from graphene_django.views import GraphQLView
+from django.views.decorators.csrf import csrf_exempt
 from django.urls import path
+from profile_view.schema import schema
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path("profile/", include(("profile_view.urls","profile_view"), namespace="profile"))
+    path("profile/", include(("profile_view.urls",
+                              "profile_view"), namespace="profile")),
+    path("q", csrf_exempt(GraphQLView.as_view(graphiql=True, schema=schema))),
+
 ]

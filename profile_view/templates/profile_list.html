@@ -1,0 +1,23 @@
+{% extends "./profile_home.html" %} {% block content %}
+
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Name</th>
+      <th scope="col">Address</th>
+    </tr>
+  </thead>
+  <tbody>
+
+    {% for name,address in profile_view_model %}
+    <tr>
+    <td> {{forloop.counter}}
+    <td> {{ name }}</td>
+    <td>{{ address }}</td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+
+{% endblock %}
